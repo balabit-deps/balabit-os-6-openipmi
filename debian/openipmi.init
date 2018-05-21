@@ -43,7 +43,14 @@ MODULE_NAME="ipmi"
 INTF_NUM=0
 
 IPMI_SMB_MODULE_NAME="ipmi_smb"
-IPMI_SI_MODULE_NAME="ipmi_si"
+case $(uname -m) in
+    "aarch64")
+        IPMI_SI_MODULE_NAME="ipmi_ssif" ;;
+    "ppc64le")
+        IPMI_SI_MODULE_NAME="ipmi_powernv" ;;
+    *)
+        IPMI_SI_MODULE_NAME="ipmi_si" ;;
+esac
 kernel=`uname -r | cut -d. -f1-2`
 if [ "${kernel}" == "2.4" ]; then
     IPMI_SMB_MODULE_NAME="ipmi_smb_intf"

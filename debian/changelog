@@ -1,3 +1,9 @@
+openipmi (2.0.18-0ubuntu11.2) xenial; urgency=medium
+
+  * d/openipmi.init: Fixed openipmi init file for other archs. (LP: #1716517)
+
+ -- Manoj Iyer <manoj.iyer@canonical.com>  Mon, 21 May 2018 15:50:05 -0500
+
 openipmi (2.0.18-0ubuntu11.1) xenial; urgency=medium
 
   * debian/openipmi.init: add Default-Start and Default-Stop values
